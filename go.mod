@@ -1,4 +1,4 @@
-module github.com/jeffwecan/go-pypi
+module github.com/ilyaglow/go-pypi
 
 require (
 	github.com/cavaliercoder/grab v2.0.0+incompatible
