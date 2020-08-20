@@ -88,7 +88,7 @@ func NewPackageIndex(url string) *PackageIndex {
 }
 
 func (p *Package) GetWheelByVersion(version string) (wheel Release) {
-    for _, release := range p.Releases[version] {
+	for _, release := range p.Releases[version] {
 		log.Printf("v%s: %s", version, release.PackageType)
 		if release.PackageType == "bdist_wheel" {
 			wheel = release
@@ -98,7 +98,7 @@ func (p *Package) GetWheelByVersion(version string) (wheel Release) {
 }
 
 func (p *Package) GetSdistByVersion(version string) (sdist Release) {
-    for _, release := range p.Releases[version] {
+	for _, release := range p.Releases[version] {
 		if release.PackageType == "sdist" {
 			sdist = release
 		}
@@ -118,8 +118,6 @@ func (p *PackageIndex) packageReq(endpoint string) (pkg Package, err error) {
 		return pkg, err
 	}
 	data, err := ioutil.ReadAll(resp.Body)
-	// log.Print(string(data))
-	log.Print("gots some datas probably")
 	if err != nil {
 		return pkg, err
 	}
@@ -142,7 +140,6 @@ func (p *PackageIndex) GetRelease(projectName string, version string) (pkg Packa
 	pkg, err = p.packageReq(endpoint)
 	return pkg, nil
 }
-
 
 func downloadReleaseFile(dst, url string) error {
 	client := grab.NewClient()
