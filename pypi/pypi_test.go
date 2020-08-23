@@ -3,7 +3,7 @@ package pypi_test
 import (
 	"testing"
 
-	"github.com/jeffwecan/go-pypi/pypi"
+	"github.com/ilyaglow/go-pypi/pypi"
 	"gotest.tools/assert"
 )
 
